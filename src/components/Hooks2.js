@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 
 export default function Hooks2() {
   const [chars, setChars] = useState([]);
+
+  // you can have more than one item on state and can update them individually
+  const [fruit, setFruit] = useState('banana');
+  // fruit is set to 'banana'
+  // setFruit is the function that updates fruit (like setState)
+
+  // const [fruit, setFruit] = useState('banana') is the same code as below
+  // var fruitStateVariable = useState('banana'); // Returns a pair
+  // var fruit = fruitStateVariable[0]; // First item in a pair
+  // var setFruit = fruitStateVariable[1]; // Second item in a pair
 
   useEffect(() => {
     axios.get('https://swapi.co/api/people').then((res) => setChars(res.data.results));

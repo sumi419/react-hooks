@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from 'axios';
+
+import Character from './Character';
 
 export default function Hooks2() {
   const [chars, setChars] = useState([]);
@@ -33,7 +34,7 @@ export default function Hooks2() {
   return (
     <>
       {chars.map((char) => (
-        <div key={char.name}>{char.name}</div>
+        <Character key={char.name} char={char} />
       ))}
     </>
   );
